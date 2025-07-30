@@ -1,0 +1,29 @@
+{
+    "name": "LLM agents lab",
+    "dockerComposeFile": [
+		"../compose.yml"
+	],
+    "service": "llm-agents-lab",
+    "runServices": ["llamacpp-server"],
+    "workspaceFolder": "/llm_agents_lab/src",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "njpwerner.autodocstring",
+                "charliermarsh.ruff"
+            ],
+            "settings": {
+                "files.autoSave": "off",
+                "[python]": {
+                    "editor.formatOnSave": true,
+                    "editor.codeActionsOnSave": {
+                    "source.fixAll": "explicit",
+                    "source.organizeImports": "explicit"
+                    },
+                    "editor.defaultFormatter": "charliermarsh.ruff"
+                }
+            }
+        }
+    }
+}

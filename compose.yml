@@ -1,0 +1,20 @@
+services:
+  llamacpp-server:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    ports:
+      - 8080:8080
+    volumes:
+      - ${LOCAL_MODELS_DIRECTORY_PATH}/:/models
+    environment:
+      LLAMA_ARG_MODEL: /models/${LLM_MODEL_GGUF_FILE_NAME}
+  llm-agents-lab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/llm_agents_lab/src
+    stdin_open: true
+    tty: true
+
+    
+    
